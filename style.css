@@ -424,17 +424,18 @@
     }
 
     .video-scroll-wrapper {
-      overflow: hidden;
-      width: 100%;
-    }
+  overflow-x: auto; /* enable horizontal scrolling */
+  overflow-y: hidden;
+  white-space: nowrap; /* prevent wrapping */
+  scroll-behavior: smooth;
+}
 
-    .video-track {
-      display: flex;
-      gap: 20px;
-      width: max-content;
-      animation: scroll-left 40s linear infinite;
-    }
-
+.video-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: none; /* remove CSS animation */
+}
     @keyframes scroll-left {
       0% {
         transform: translateX(0);
@@ -504,7 +505,6 @@
 
 .shorts-section {
   padding: 60px 20px;
-  /* background: #111; */
   color: white;
   text-align: center;
   overflow: hidden;
@@ -516,23 +516,68 @@
 }
 
 .shorts-section .video-scroll-wrapper {
-  overflow: hidden;
-  position: relative;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  
+  /* Hide scrollbar */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.shorts-section .video-scroll-wrapper::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari */
 }
 
 .shorts-section .video-track {
   display: flex;
   gap: 20px;
-  animation: scrollShorts 35s linear infinite;
   width: max-content;
+  /* animation removed */
 }
 
-@keyframes scrollShorts {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.shorts-card {
+  /* Keep width and height as you want */
+  flex: 0 0 auto;
+  width: 250px;
+  height: 444px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  margin-right: 20px;
+  cursor: pointer;
+  position: relative; /* Add this so play-button z-index works */
+}
+
+.shorts-thumbnail {
+  width: 100%;       /* Make it full card width */
+  height: 100%;      /* Make it full card height */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  background: url('images/YouTube_play_button_icon_\(2013–2017\).svg.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.9;
+  cursor: pointer;
+  z-index: 10; 
+  pointer-events: none; 
 }
 
 
+
+
+.shorts-card:hover .play-button {
+  opacity: 1;
+}
 
 .shorts-card iframe {
   width: 100%;
@@ -547,62 +592,7 @@
   transform: scale(1.05);
 }
 
-.shorts-card {
-  flex: 0 0 auto;
-  width: 250px;
-  height: 444px;
-  margin-right: 20px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-
-.shorts-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.shorts-thumbnail {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  width: 200px; /* adjust as needed */
-  height: 350px; /* adjust as needed */
-}
-
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(163, 27, 27, 0.6);
-  border-radius: 50%;
-  z-index: 10;
-  cursor: pointer;
-}
-
-.play-button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-35%, -50%);
-  width: 0;
-  height: 0;
-  border-left: 20px solid white;
-  border-top: 12px solid transparent;
-  border-bottom: 12px solid transparent;
-  cursor: pointer;
-}
-
-
-
-
-
-/* Responsive adjustments */
+/* Responsive */
 @media (max-width: 768px) {
   .shorts-card {
     width: 160px;
@@ -613,30 +603,16 @@
     font-size: 1.5rem;
   }
 
-  .shorts-section .video-track {
-    gap: 15px;
-    animation: scrollShortsMobile 25s linear infinite;
+  .shorts-thumbnail {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
   }
 
-
-  .shorts-thumbnail {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: transform 0.4s ease;
-}
-
-.shorts-card:hover .shorts-thumbnail {
-  transform: scale(1.05);
-}
-
-
-  @keyframes scrollShortsMobile {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+  .shorts-card:hover .shorts-thumbnail {
+    transform: scale(1.05);
   }
 }
 
@@ -646,40 +622,7 @@
     height: 210px;
   }
 }
-.shorts-thumbnail {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  border-radius: 10px;
-  position: relative;
-}
 
-.play-button {
-  width: 68px;
-  height: 48px;
-  background: url('https://i.imgur.com/TxzC70f.png') no-repeat center center;
-  background-size: contain;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.9;
-  z-index: 2; /* make sure it stays on top */
-  pointer-events: none; /* so clicking still works on the thumbnail */
-}
-
-.shorts-card:hover .play-button {
-  opacity: 1;
-}
-
-.shorts-card iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 10px;
-}
 
 
 
