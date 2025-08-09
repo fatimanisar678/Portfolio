@@ -53,3 +53,20 @@ shortsScrollWrapper.addEventListener('mouseleave', () => {
 
 // Start auto-scroll initially
 startShortsAutoScroll();
+
+document.querySelectorAll('.shorts-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const videoId = card.getAttribute('data-id');
+    card.innerHTML = `
+      <iframe
+        width="100%"
+        height="100%"
+        src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    `;
+  });
+});
+
