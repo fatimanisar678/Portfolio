@@ -624,8 +624,7 @@
   .shorts-card:hover .shorts-thumbnail {
     transform: scale(1.05);
   }
-
-  .play-button {
+      .play-button {
     width: 48px;
     height: 34px;
   }
@@ -637,11 +636,11 @@
     width: 120px;
     height: 210px;
   }
-
-  .play-button {
+    .play-button {
     width: 32px;
     height: 22px;
   }
+  
 }
 
 
