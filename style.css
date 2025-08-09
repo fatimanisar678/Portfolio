@@ -36,8 +36,16 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
 }
+.logo-text {
+  font-size: 1rem;    /* adjust font size */
+  font-weight: bold;
+  color: white;         /* or your theme color */
+  user-select: none;    /* optional: prevent text selection */
+}
+
+
 
 .email-link {
   color: #f1e7e7;
