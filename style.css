@@ -39,7 +39,7 @@
   gap: 10px;
 }
 .logo-text {
-  font-size: 1rem;    /* adjust font size */
+  font-size: 16px;    /* adjust font size */
   font-weight: bold;
   color: white;         /* or your theme color */
   user-select: none;    /* optional: prevent text selection */
@@ -624,12 +624,23 @@
   .shorts-card:hover .shorts-thumbnail {
     transform: scale(1.05);
   }
+
+  .play-button {
+    width: 48px;
+    height: 34px;
+  }
 }
+
 
 @media (max-width: 480px) {
   .shorts-card {
     width: 120px;
     height: 210px;
+  }
+
+  .play-button {
+    width: 32px;
+    height: 22px;
   }
 }
 
