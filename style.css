@@ -474,6 +474,12 @@
       pointer-events: auto;
     }
 
+    .video-scroll-wrapper:hover .video-track,
+.video-track:hover {
+  animation-play-state: paused;
+}
+
+
     @media (max-width: 768px) {
   .video-card {
     width: 320px;
