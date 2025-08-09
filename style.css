@@ -307,6 +307,7 @@
 }
 
 
+
     @media (min-width: 768px) {
       .hero-container {
         flex-direction: row;
@@ -475,10 +476,11 @@
       pointer-events: auto;
     }
 
-    .video-scroll-wrapper:hover .video-track,
+.video-scroll-wrapper:hover .video-track,
 .video-track:hover {
-  animation-play-state: paused;
+  animation-play-state: paused !important;
 }
+
 
 
     @media (max-width: 768px) {
