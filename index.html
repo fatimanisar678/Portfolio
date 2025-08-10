@@ -117,7 +117,7 @@
 </div>
 
 
-      <!-- repeat for smooth loop -->
+     
   <div class="video-card" data-video-id="3m1JkImk-N8">
   <div class="video-thumb">
     <img src="https://img.youtube.com/vi/3m1JkImk-N8/hqdefault.jpg" alt="Video Thumbnail">
@@ -162,7 +162,7 @@
   <div class="video-scroll-wrapper">
     <div class="video-track">
 
-      <!-- Each card now shows a thumbnail first -->
+    
       <div class="shorts-card" data-id="9a6uZ00XcEc">
         <div class="shorts-thumbnail" style="background-image: url('https://img.youtube.com/vi/9a6uZ00XcEc/hqdefault.jpg');">
           <div class="play-button"></div>
@@ -214,7 +214,7 @@
 
 
 
-      <!-- Repeat for loop effect -->
+      
       <div class="shorts-card" data-id="9a6uZ00XcEc">
         <div class="shorts-thumbnail" style="background-image: url('https://img.youtube.com/vi/9a6uZ00XcEc/hqdefault.jpg');">
           <div class="play-button"></div>
@@ -233,10 +233,7 @@
         </div>
       </div>
 
-      <!-- Repeat for loop effect -->
-<!-- existing repeated cards here -->
-
-<!-- add repeats of new cards here too -->
+      
 
 <div class="shorts-card" data-id="3wKFgUbZqyQ">
   <div class="shorts-thumbnail" style="background-image: url('https://img.youtube.com/vi/3wKFgUbZqyQ/hqdefault.jpg');">
@@ -271,7 +268,7 @@
 <div class="slider-container">
   <div class="slider-track">
 
-    <!-- Section 1: Promotional Videos (2) -->
+    
   
 
 
@@ -284,7 +281,7 @@
 </section>
 
 
-    <!-- Section 2: Graphic Designs (2) -->
+    
     <section class="slider-section">
       <h2>Graphic Designs</h2>
       <div class="media-group">
@@ -314,7 +311,6 @@
 
 
 
-    <!-- Section 3: Thumbnails (3–4) -->
     <section class="slider-section">
       <h2>Thumbnails</h2>
       <div class="thumbnail-grid">
@@ -326,7 +322,7 @@
 
   </div>
 
-  <!-- Dot Navigation -->
+
   <div class="dot-nav">
     <span class="dot active"></span>
     <span class="dot"></span>
@@ -379,23 +375,23 @@
 <section id="testimonals" class="testimonial-section">
   <div class="testimonial-container-vertical">
 
-    <!-- Left Text -->
+   
     <div class="testimonial-text">
       <h2>My Client's Stories</h2>
       <p>Empowering people in a new digital journey with my super services.</p>
     </div>
 
-    <!-- Right Vertical Cards -->
+   
     <div class="testimonial-cards-vertical">
       
-      <!-- Card 1 -->
+     
       <div class="testimonial-card">
         <h3>Joseph Morgan</h3>
         <p class="position">Content Creator</p>
         <p class="feedback">“Ghasif is a professional Editor. He really helps my business by providing value.”</p>
       </div>
 
-      <!-- Card 2 -->
+    
       <div class="testimonial-card">
        
         <h3>Brandon Fraser</h3>
@@ -410,7 +406,7 @@
 
 
 <section id="contact">
-  <!-- Left Form -->
+
   <div class="contact-left form-box">
     <h2>Let's work<br><strong>together!</strong></h2>
     <p>I edit and design  simple things and I love what I do. Just simple like that!</p>
@@ -439,7 +435,7 @@
     </form>
   </div>
 
-  <!-- Right Info -->
+  
   <div class="contact-right info-box">
     <div class="contact-info">
       <h4>📞 Phone</h4>
@@ -468,7 +464,7 @@
 
 
 
-
+<script src="script.js"></script>
 <script src="scroll.js"></script>
 <script src="shorts.js"></script>
 <script src="slider.js"></script>
@@ -477,96 +473,5 @@
       document.querySelector('.navlinks').classList.toggle('active');
     }
   </script>
-
-  <script>
-
-
-const scrollWrapper = document.querySelector('.video-scroll-wrapper');
-
-let autoScrollInterval;
-let isUserScrolling = false;
-
-function startAutoScroll() {
-  autoScrollInterval = setInterval(() => {
-    if (!isUserScrolling) {
-      // Scroll 1 pixel every 20ms, adjust speed here
-      scrollWrapper.scrollLeft += 1;
-
-      // If reached end, scroll back to start (loop)
-      if (scrollWrapper.scrollLeft >= scrollWrapper.scrollWidth - scrollWrapper.clientWidth) {
-        scrollWrapper.scrollLeft = 0;
-      }
-    }
-  }, 20);
-}
-
-function stopAutoScroll() {
-  clearInterval(autoScrollInterval);
-}
-
-// Detect user scroll start
-scrollWrapper.addEventListener('mousedown', () => {
-  isUserScrolling = true;
-  stopAutoScroll();
-});
-
-// Detect user scroll end
-scrollWrapper.addEventListener('mouseup', () => {
-  isUserScrolling = false;
-  startAutoScroll();
-});
-
-// Also handle touch events for mobile
-scrollWrapper.addEventListener('touchstart', () => {
-  isUserScrolling = true;
-  stopAutoScroll();
-});
-scrollWrapper.addEventListener('touchend', () => {
-  isUserScrolling = false;
-  startAutoScroll();
-});
-
-// Start auto-scroll initially
-startAutoScroll();
-
-// Pause auto-scroll on hover
-scrollWrapper.addEventListener('mouseenter', () => {
-  isUserScrolling = true; // treat hover as user interaction to pause auto scroll
-  stopAutoScroll();
-});
-
-scrollWrapper.addEventListener('mouseleave', () => {
-  isUserScrolling = false;
-  startAutoScroll();
-});
-
-document.querySelectorAll('.video-card').forEach(card => {
-  card.addEventListener('click', () => {
-    const videoId = card.getAttribute('data-video-id');
-    card.innerHTML = `
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    `;
-  });
-});
-
-
-
-</script>
-
-<script>
-
-
-
-
-</script>
-
-
 </body>
 </html>

@@ -11,15 +11,17 @@
       color: #fff;
     }
 
+  /*nav part*/
+
   .navbar {
-  background: rgba(0, 0, 0, 0.6); /* Optional: semi-transparent */
-  backdrop-filter: blur(10px);   /* Optional: blur effect */
-  border-radius: 0;              /* No rounded corners */
+  background: rgba(0, 0, 0, 0.6); 
+  backdrop-filter: blur(10px);   
+  border-radius: 0;            
   margin: 0 auto;
   padding: 12px 20px;
   width: 100%;
   max-width: 100%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Optional: shadow for depth */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
   position: fixed;
 }
 
@@ -39,24 +41,10 @@
   gap: 10px;
 }
 .logo-text {
-  font-size: 16px;    /* adjust font size */
+  font-size: 16px;    
   font-weight: bold;
-  color: white;         /* or your theme color */
-  user-select: none;    /* optional: prevent text selection */
-}
-
-
-
-.email-link {
-  color: #f1e7e7;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.email-link:hover {
-  color: #dbe2e3;
+  color: white;         
+  user-select: none;    
 }
 
 .logopic {
@@ -118,8 +106,7 @@
       cursor: pointer;
       color: white;
     }
-
-
+/* hero paart*/
 
     .hero {
       padding-top: 120px;
@@ -207,115 +194,6 @@
       border-radius: 20px;
     }
 
-   .video-section {
-  padding: 50px 20px;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 4rem;
-  margin-bottom: 40px;
-}
-
-.video-scroll-wrapper {
-  overflow: hidden;
-}
-
-.video-track {
-  display: flex;
-  gap: 20px;
-  animation: scroll-left 40s linear infinite;
-  width: max-content;
-}
-
-@keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.video-card {
-  min-width: 300px;
-  height: 170px;
-  flex-shrink: 0;
-  overflow: hidden;
-  border-radius: 15px;
-  background: #000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.video-card video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.video-card:hover video {
-  transform: scale(1.05);
-}
-
-
-.video-card {
-  position: relative;
-  min-width: 300px;
-  height: 170px;
-  flex-shrink: 0;
-  overflow: hidden;
-  border-radius: 15px;
-  background: #000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-}
-
-.video-thumb {
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* Clips image inside */
-  border-radius: inherit; /* Matches parent's rounded corners */
-}
-
-
-.video-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.video-card:hover .video-thumb img {
-  transform: scale(1.05);
-}
-
-.play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 0, 0, 0.85);
-  border-radius: 50%;
-}
-.play-btn::before {
-  content: "";
-  position: absolute;
-  left: 20px;
-  top: 14px;
-  border-style: solid;
-  border-width: 10px 0 10px 16px;
-  border-color: transparent transparent transparent #fff;
-}
-
-.video-card iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-
-
     @media (min-width: 768px) {
       .hero-container {
         flex-direction: row;
@@ -340,14 +218,14 @@
   gap: 40px;
   margin-top: 50px;
   padding: 20px;
-  /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
+  
 }
 
 .stat-box {
   display: flex;
   align-items: center;
   gap: 10px;
-  /* background: rgba(255, 255, 255, 0.05); */
+
   padding: 12px 20px;
   border-radius: 12px;
 }
@@ -363,7 +241,7 @@
   color: #dcdcdc;
 }
 
-/* Optional: responsive font size */
+
 @media (max-width: 480px) {
   .stat-number {
     font-size: 30px;
@@ -419,23 +297,23 @@
     height: 100%;
   }
 }
+/*vedio section*/
 
+.video-section {
+  padding: 50px 20px;
+  /* background-color: #000; */
+}
 
- .video-section {
-      padding: 50px 20px;
-      /* background-color: #000; */
-    }
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 3rem;
-      margin-bottom: 30px;
-    }
-
-    .video-scroll-wrapper {
-  overflow-x: auto; /* enable horizontal scrolling */
+.video-scroll-wrapper {
+  overflow-x: auto; 
   overflow-y: hidden;
-  white-space: nowrap; /* prevent wrapping */
+  white-space: nowrap; 
   scroll-behavior: smooth;
 }
 
@@ -443,31 +321,76 @@
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: none; /* remove CSS animation */
+  animation: scroll-left 40s linear infinite;
 }
-    @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
 
-    .video-card {
+.video-scroll-wrapper:hover .video-track,
+.video-track:hover {
+  animation-play-state: paused !important;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.video-card {
+  position: relative;
   flex: 0 0 auto;
+  min-width: 300px;
+  height: 170px;
   width: 500px;
   height: 280px;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   background-color: #111;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
   transition: transform 0.3s ease;
-  position: relative;
 }
 
 .video-card:hover {
   transform: scale(1.05);
+}
+
+.video-thumb {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.video-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover .video-thumb img {
+  transform: scale(1.05);
+}
+
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 0, 0, 0.85);
+  border-radius: 50%;
+}
+
+.play-btn::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  border-style: solid;
+  border-width: 10px 0 10px 16px;
+  border-color: transparent transparent transparent #fff;
 }
 
 .video-card iframe {
@@ -480,14 +403,10 @@
   border-radius: inherit;
 }
 
-    .video-card:hover iframe {
-      pointer-events: auto;
-    }
-
-.video-scroll-wrapper:hover .video-track,
-.video-track:hover {
-  animation-play-state: paused !important;
+.video-card:hover iframe {
+  pointer-events: auto;
 }
+
 
 
 
@@ -513,6 +432,8 @@
   }
 }
 
+ /*shorts section*/
+
 .shorts-section {
   padding: 60px 20px;
   color: white;
@@ -531,22 +452,22 @@
   -webkit-overflow-scrolling: touch;
   
   /* Hide scrollbar */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 .shorts-section .video-scroll-wrapper::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari */
+  display: none;  
 }
 
 .shorts-section .video-track {
   display: flex;
   gap: 20px;
   width: max-content;
-  /* animation removed */
+  
 }
 
 .shorts-card {
-  /* Keep width and height as you want */
+  
   flex: 0 0 auto;
   width: 250px;
   height: 444px;
@@ -555,12 +476,12 @@
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   margin-right: 20px;
   cursor: pointer;
-  position: relative; /* Add this so play-button z-index works */
+  position: relative; 
 }
 
 .shorts-thumbnail {
-  width: 100%;       /* Make it full card width */
-  height: 100%;      /* Make it full card height */
+  width: 100%;       
+  height: 100%;      
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -602,7 +523,7 @@
   transform: scale(1.05);
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .shorts-card {
     width: 160px;
@@ -644,7 +565,7 @@
 }
 
 
-
+/*slider section*/
 
 
 .slider-container {
@@ -873,17 +794,17 @@
 
 .testimonial-container-vertical {
   display: flex;
-  gap: 100px; /* Increased gap between text and cards */
+  gap: 100px; 
   align-items: flex-start;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 20px 0; /* Top and bottom spacing */
+  padding: 20px 0; 
 }
 
 .testimonial-text {
   flex: 1;
   max-width: 400px;
-  padding: 20px; /* Added padding for clarity */
+  padding: 20px;
 }
 
 .testimonial-text h2 {
@@ -902,7 +823,7 @@
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 40px; /* More space between cards */
+  gap: 40px; 
 }
 
 .testimonial-card {
@@ -965,7 +886,7 @@
   flex-wrap: wrap;
   padding: 60px 20px;
   gap: 40px;
-  /* background-color: #0e0e0e; */
+  
 }
 
 .contact-left,
@@ -975,16 +896,16 @@
   padding: 20px;
 }
 
-/* Form Box Styling */
+/* Form Box  */
 .form-box {
   background-color: #200909;
   border-radius: 10px;
   padding: 30px;
 }
 
-/* Info Box Styling */
+/* Info Box  */
 .info-box {
-  /* background-color: #141414; */
+  
   border-radius: 10px;
   padding: 30px;
 }

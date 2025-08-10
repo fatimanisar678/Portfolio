@@ -19,7 +19,7 @@ function stopShortsAutoScroll() {
   clearInterval(shortsAutoScrollInterval);
 }
 
-// User interaction handlers
+
 shortsScrollWrapper.addEventListener('mousedown', () => {
   shortsIsUserScrolling = true;
   stopShortsAutoScroll();
